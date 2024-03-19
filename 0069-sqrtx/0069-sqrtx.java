@@ -1,10 +1,11 @@
 class Solution {
     public int mySqrt(int x) {
-        long n = x;
-        while(n * n > x){
-            n = (n + x / n) / 2;
+        long n = 1;
+        long r = n * n;
+        while(x >= r){
+            n++;
+            r = n * n;
         }
-        return (int)n;
-        
+        return (int)n-1;
     }
 }
